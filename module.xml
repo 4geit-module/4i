@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<module name="4i" branch="master">
+  <node name="project" pre="project_pre.gsl" post="project_post.gsl">
+    <attribute name="name" required="True"/>
+    <attribute name="vendor"/>
+    <attribute name="vendor_email"/>
+    <attribute name="branch" required="True"/>
+    <attribute name="version"/>
+    <attribute name="license"/>
+    <attribute name="description"/>
+    <node name="author" number="*">
+      <attribute name="name" required="True"/>
+      <attribute name="email"/>
+    </node> <!-- !author -->
+    <node name="keyword" number="*">
+      <attribute name="value" required="True"/>
+    </node> <!-- !keyword -->
+    <node name="reference" number="*">
+      <attribute name="src" required="True"/>
+      <attribute name="dst"/>
+      <attribute name="ctx"/>
+    </node> <!-- !reference -->
+    <node name="module" number="*" post="module_post.gsl"/>
+    <node name="file" number="*">
+      <attribute name="name" required="True"/>
+      <node name="image" number="*">
+	<attribute name="name" required="True"/>
+	<attribute name="resize"/>
+      </node> <!-- !image -->
+    </node> <!-- !file -->
+    <node name="output" number="*" pre="output_pre.gsl">
+      <attribute name="name" required="True"/>
+    </node> <!-- !output -->
+    <node name="dir" number="*" pre="dir_pre.gsl" post="dir_post.gsl">
+      <attribute name="name" required="True"/>
+      <node ref=":file"/>
+      <node ref=":output"/>
+      <node ref=":dir"/>
+    </node> <!-- !dir -->
+  </node> <!-- !project -->
+</module>

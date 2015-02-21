@@ -1,0 +1,12 @@
+.template 0
+
+debug('create_project_directories')
+directory.create(global.build_path)
+directory.create(global.cache_path)
+
+load_file("$(global.forgeit_path:)/assets/bootstrap__sh.gsl")
+load_file("$(global.forgeit_path:)/assets/run__sh.gsl")
+load_file("$(global.forgeit_path:)/assets/command__sh.gsl")
+# file__copy_files(project, '', global.build_path)
+
+.endtemplate
