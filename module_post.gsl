@@ -1,7 +1,7 @@
 .template 0
 
-load_file("$(global.forgeit_path:)/assets/requirements__txt.gsl")
-load_file("$(global.forgeit_path:)/assets/package__json.gsl")
-load_file("$(global.forgeit_path:)/assets/module__bootstrap__sh.gsl")
+load_file("assets/requirements__txt.gsl")
+load_file("assets/package__json.gsl")
+load_file("assets/module__bootstrap__sh.gsl")
 
 .endtemplate
