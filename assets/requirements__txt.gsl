@@ -3,7 +3,7 @@
 . my.ctx ?= project
 .
 . for my.ctx.require as r where !defined(r.env) | (defined(r.env) & r.env = 'pip')
-.   log('require package "$(r.name)"' + conditional__ifdef_else_empty(r.version, ', version "$(r.operator?">=")$(r.version)"'))
+.   debug('require package "$(r.name)"' + conditional__ifdef_else_empty(r.version, ', version "$(r.operator?">=")$(r.version)"'))
 .
 $(r.name)\
 $(conditional__ifdef_else_empty(r.version, '$(r.operator?">=")$(r.version)'))
@@ -16,7 +16,7 @@ $(conditional__ifdef_else_empty(r.version, '$(r.operator?">=")$(r.version)'))
 
 if defined(project.python_version)
 
-  log('create "$(projectnode.name)" requirements.txt')
+  debug('create "$(projectnode.name)" requirements.txt')
   cached = cache_open("$(projectnode.name)_requirements.txt")
 
   for project.extension as e

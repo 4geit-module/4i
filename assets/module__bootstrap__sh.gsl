@@ -1,5 +1,5 @@
 .template 1
-.log('create "$(projectnode.name)" bootstrap.sh')
+.debug('create "$(projectnode.name)" bootstrap.sh')
 .cached = cache_open("$(projectnode.name)_bootstrap.sh")
 .
 #!/bin/bash
