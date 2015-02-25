@@ -28,10 +28,10 @@
 	<attribute name="resize"/>
       </node> <!-- !image -->
     </node> <!-- !file -->
-    <node name="output" number="*" pre="output_pre.gsl">
+    <node name="output" number="*" pre="output_pre.gsl" debug="True">
       <attribute name="name" required="True"/>
     </node> <!-- !output -->
-    <node name="dir" number="*" pre="dir_pre.gsl" post="dir_post.gsl">
+    <node name="dir" number="*" pre="dir_pre.gsl" post="dir_post.gsl" debug="True">
       <attribute name="name" required="True"/>
       <node ref=":file"/>
       <node ref=":output"/>
