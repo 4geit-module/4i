@@ -1,0 +1,10 @@
+.template 1
+.
+$(project.name:upper)
+----
+.if defined(project.description)
+
+$(project.description:)
+.endif
+.
+.endtemplate

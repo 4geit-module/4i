@@ -8,10 +8,13 @@
     <attribute name="version"/>
     <attribute name="license"/>
     <attribute name="description"/>
-    <node name="author" number="*">
-      <attribute name="name" required="True"/>
-      <attribute name="email"/>
-    </node> <!-- !author -->
+    <node name="readme" virtual="True" dst="README" post="readme_post.gsl"/>
+    <node name="authors" virtual="True" copy="True" dst="AUTHORS">
+      <node name="author" number="*" post="author_post.gsl" debug="True">
+	<attribute name="name" required="True"/>
+	<attribute name="email"/>
+      </node> <!-- !author -->
+    </node> <!-- !authors -->
     <node name="keyword" number="*">
       <attribute name="value" required="True"/>
     </node> <!-- !keyword -->

@@ -1,0 +1,9 @@
+.template 1
+.
+.if defined(projectnode.email)
+$(projectnode.name:) <$(projectnode.email)>
+.else
+$(projectnode.name:)
+.endif
+.
+.endtemplate
