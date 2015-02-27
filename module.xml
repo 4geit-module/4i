@@ -31,11 +31,13 @@
 	<attribute name="resize"/>
       </node> <!-- !image -->
     </node> <!-- !file -->
-    <node name="output" number="*" pre="output_pre.gsl" debug="True">
+    <node name="output" number="*" pre_check="output_pre_check.gsl" debug="True">
       <attribute name="name" required="True"/>
+      <attribute name="path" required="True"/>
     </node> <!-- !output -->
-    <node name="dir" number="*" pre="dir_pre.gsl" post="dir_post.gsl" debug="True">
+    <node name="dir" number="*" pre_check="dir_pre_check.gsl" post="dir_post.gsl" debug="True">
       <attribute name="name" required="True"/>
+      <attribute name="path" required="True"/>
       <node ref=":file"/>
       <node ref=":output"/>
       <node ref=":dir"/>
