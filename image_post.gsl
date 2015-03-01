@@ -1,0 +1,30 @@
+.template 0
+
+parentnode = projectnode.parent()
+
+debug('convert "$(parentnode.name:)" to "$(projectnode.name:)"')
+
+prefix_options = ''
+options = ''
+
+if defined(projectname.resize)
+  options += ' -resize $(projectname.resize:)'
+endif
+
+for projectnode.replace as r
+  if defined(r.fill) & defined(r.opaque)
+    if defined(r.fuzz)
+      options += ' -fuzz $(r.fuzz:)'
+    endif
+    options += ' -fill $(r.fill:) -opaque $(r.opaque:)'
+  endif
+endfor
+
+prefix_options += ' -background $(projectnode.background?"none":)'
+
+file__exec("convert $(prefix_options:) "+\
+           "$(global.project_path:)$(parentnode.path:)$(parentnode.name:) "+\
+           "$(options:) "+\
+           "$(global.build_path:)$(parentnode.path:)$(projectnode.name:)")
+
+.endtemplate

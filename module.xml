@@ -24,9 +24,10 @@
       <attribute name="ctx"/>
     </node> <!-- !reference -->
     <node name="module" number="*" post="module_post.gsl"/>
-    <node name="file" number="*">
+    <node name="file" number="*" debug="True" pre_check="file_pre_check.gsl" post="file_post.gsl">
       <attribute name="name" required="True"/>
-      <node name="image" number="*">
+      <attribute name="path" required="True"/>
+      <node name="image" number="*" post="image_post.gsl" debug="True">
 	<attribute name="name" required="True"/>
 	<attribute name="resize"/>
       </node> <!-- !image -->

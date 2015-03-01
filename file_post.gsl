@@ -1,0 +1,9 @@
+.template 0
+
+debug('copy "$(global.project_path:)$(projectnode.path:)$(projectnode.name:)" '+\
+      'to "$(global.build_path:)$(projectnode.path:)$(projectnode.name:)"')
+
+file.copy('$(global.project_path:)$(projectnode.path:)$(projectnode.name:)',\
+          '$(global.build_path:)$(projectnode.path:)$(projectnode.name:)')
+
+.endtemplate
