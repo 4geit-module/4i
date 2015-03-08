@@ -23,7 +23,6 @@
       <attribute name="dst"/>
       <attribute name="ctx"/>
     </node> <!-- !reference -->
-    <node name="module" number="*" post="module_post.gsl"/>
     <node name="file" number="*" debug="True" pre_check="file_pre_check.gsl" post="file_post.gsl">
       <attribute name="name" required="True"/>
       <attribute name="path" required="True"/>
@@ -36,12 +35,25 @@
       <attribute name="name" required="True"/>
       <attribute name="path" required="True"/>
     </node> <!-- !output -->
+    <node name="gsl" number="*" pre_check="gsl_pre_check.gsl" post="gsl_post.gsl" debug="True">
+      <attribute name="from" required="True"/>
+      <attribute name="output" required="True"/>
+      <attribute name="path" required="True"/>
+      <attribute name="binary" type="boolean"/>
+    </node> <!-- !gsl -->
     <node name="dir" number="*" pre_check="dir_pre_check.gsl" post="dir_post.gsl" debug="True">
       <attribute name="name" required="True"/>
       <attribute name="path" required="True"/>
       <node ref=":file"/>
       <node ref=":output"/>
+      <node ref=":gsl"/>
       <node ref=":dir"/>
     </node> <!-- !dir -->
+    <node name="module" number="*" post="module_post.gsl">
+      <node ref=":file"/>
+      <node ref=":output"/>
+      <node ref=":gsl"/>
+      <node ref=":dir"/>
+    </node>
   </node> <!-- !project -->
 </module>

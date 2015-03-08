@@ -1,7 +1,7 @@
 .template 1
 .
 $(project.name:upper)
-----
+$("-"*string.length(project.name))
 .if defined(project.description)
 
 $(project.description:)

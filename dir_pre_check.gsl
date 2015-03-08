@@ -1,9 +1,17 @@
 .template 0
 
-if defined(projectnode.parent()) & name(projectnode.parent()) = 'dir'
-  parentdir = projectnode.parent()
-  if defined(parentdir.path)
-    define projectnode.path = parentdir.path + '/' + projectnode.name
+parentnode = projectnode.parent()
+
+if defined(parentnode) & name(parentnode) = 'module'
+  projectnode.module_path = get_resource_path(parentnode)
+endif
+
+if defined(parentnode) & name(parentnode) = 'dir'
+  if defined(parentnode.path)
+    define projectnode.path = parentnode.path + '/' + projectnode.name
+  endif
+  if defined(parentnode.module_path)
+    define projectnode.module_path = parentnode.module_path
   endif
 else
   define projectnode.path = projectnode.name
