@@ -1,0 +1,34 @@
+.template 0
+
+parentnode = projectnode.parent()
+
+if defined(projectnode.module_path)
+  fn = projectnode.module_path + path + projectnode.\from
+else
+  fn = global.project_path + path + projectnode.\from
+endif
+
+debug('gsl from "$(fn:)"')
+
+if defined(projectnode.output)
+  out = path + projectnode.output
+  debug('output "$(out:)"')
+endif
+
+if !file.exists(fn)
+  error('The filename "$(fn:)" doesnot exist.')
+endif
+
+cached = cache__open(out)
+
+.template 1
+.gsl from fn
+.endtemplate
+
+cache__close(cached)
+
+if defined(projectnode.binary) & projectnode.binary = "True"
+  file__chmod('+x', global.build_path + cached)
+endif
+
+.endtemplate
