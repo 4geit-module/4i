@@ -37,7 +37,7 @@
     </node> <!-- !output -->
     <node name="gsl" number="*" pre_check="gsl_pre_check.gsl" post="gsl_post.gsl" debug="True">
       <attribute name="from" required="True"/>
-      <attribute name="output" required="True"/>
+      <attribute name="output"/>
       <attribute name="path" required="True"/>
       <attribute name="binary" type="boolean"/>
     </node> <!-- !gsl -->
