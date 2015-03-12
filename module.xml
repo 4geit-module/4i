@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<module name="4i" branch="master">
+<module name="4i" branch="master" description="4i root module, every modules are based on it">
   <node name="project" pre="project_pre.gsl" post="project_post.gsl">
     <attribute name="name" required="True"/>
     <attribute name="vendor"/>
