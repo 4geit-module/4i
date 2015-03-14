@@ -50,7 +50,7 @@
       <node ref=":gsl"/>
       <node ref=":dir"/>
     </node> <!-- !dir -->
-    <node name="module" number="*" post="module_post.gsl">
+    <node name="module" number="*">
       <node ref=":file"/>
       <node ref=":output"/>
       <node ref=":gsl"/>
