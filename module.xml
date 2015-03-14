@@ -39,6 +39,7 @@
       <attribute name="from" required="True"/>
       <attribute name="output"/>
       <attribute name="path" required="True"/>
+      <attribute name="source_path"/>
       <attribute name="binary" type="boolean"/>
     </node> <!-- !gsl -->
     <node name="dir" number="*" pre_check="dir_pre_check.gsl" post="dir_post.gsl" debug="True">

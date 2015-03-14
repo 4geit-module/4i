@@ -20,7 +20,11 @@
 parentnode = projectnode.parent()
 
 if defined(projectnode.module_path)
-  fn = projectnode.module_path + path + projectnode.\from
+  if defined(projectnode.source_path)
+    fn = projectnode.module_path + projectnode.source_path + projectnode.\from
+  else
+    fn = projectnode.module_path + path + projectnode.\from
+  endif
 else
   fn = global.project_path + path + projectnode.\from
 endif

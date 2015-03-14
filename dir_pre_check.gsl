@@ -23,6 +23,9 @@ if defined(parentnode) & name(parentnode) = 'module'
   projectnode.module_path = get_resource_path(parentnode)
 endif
 
+projectnode.origin_name = projectnode.name
+projectnode.name = string__convert_variables(projectnode.name, project)
+
 if defined(parentnode) & name(parentnode) = 'dir'
   if defined(parentnode.path)
     define projectnode.path = parentnode.path + '/' + projectnode.name
