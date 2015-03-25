@@ -1,0 +1,5 @@
+<project name="xyz" branch="master">
+  <module name="4i" required_branch="master"/>
+  <author name="Richard M. Stallman" email="rms@gnu.org"/>
+  <author name="Alan Turing" email="alan@turing.org"/>
+</project>

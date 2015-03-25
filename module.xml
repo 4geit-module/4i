@@ -57,4 +57,7 @@
       <node ref=":dir"/>
     </node>
   </node> <!-- !project -->
+
+  <test name="create_readme_file" description="create a readme file"/>
+  <test name="create_authors_file" description="create the authors file"/>
 </module>
