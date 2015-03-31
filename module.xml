@@ -58,6 +58,7 @@
     </node>
   </node> <!-- !project -->
 
+  <test name="inclusion" description="test xml file inclusion"/>
   <test name="create_readme_file" description="create a readme file"/>
   <test name="create_authors_file" description="create the authors file"/>
 </module>
