@@ -18,7 +18,7 @@
     <node name="keyword" number="*">
       <attribute name="value" required="True"/>
     </node> <!-- !keyword -->
-    <node name="reference" number="*">
+    <node name="reference" number="*" pre_combine="reference_pre_combine.gsl" debug="True">
       <attribute name="src" required="True"/>
       <attribute name="dst"/>
       <attribute name="ctx"/>
@@ -59,6 +59,7 @@
   </node> <!-- !project -->
 
   <test name="inclusion" description="test xml file inclusion"/>
+  <test name="reference" description="test reference feature"/>
   <test name="create_readme_file" description="create a readme file"/>
   <test name="create_authors_file" description="create the authors file"/>
 </module>

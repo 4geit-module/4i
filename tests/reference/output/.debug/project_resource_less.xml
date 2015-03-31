@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project
+    name = "xyz"
+    branch = "master">
+    <reference
+        src = "test"/>
+    <test
+        id = "mytest">
+        <test2
+            attr1 = "value1"
+            attr2 = "value2"/>
+    </test>
+    <subtest>
+        <test
+            id = "mytest"
+            description = ""
+            origin = "mytest">
+            <test2
+                attr1 = "value1"
+                attr2 = "value2"/>
+        </test>
+    </subtest>
+    <test
+        id = "mytest"
+        description = ""
+        origin = "mytest">
+        <test2
+            attr1 = "value1"
+            attr2 = "value2"/>
+    </test>
+    <readme/>
+    <authors/>
+    <cache
+        path = "README"/>
+    <cache
+        path = "AUTHORS"/>
+</project>

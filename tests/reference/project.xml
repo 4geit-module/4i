@@ -1,0 +1,11 @@
+<project name="xyz" branch="master">
+  <module name="4i" required_branch="master"/>
+  <reference src="test"/>
+  <test id="mytest">
+    <test2 attr1="value1" attr2="value2"/>
+  </test>
+  <test ref="mytest"/>
+  <subtest>
+    <test ref=":mytest"/>
+  </subtest>
+</project>
